@@ -1,45 +1,91 @@
-# Coin_Detection
-## Coin Detection and Annotation using OpenCV
+# Coin Detection and Annotation using OpenCV
 ## Project Overview
 
-This project focuses on detecting and annotating coins in an image using OpenCV. The main objective is to identify coin positions accurately and visualize them for analysis or further processing.
+This project demonstrates coin detection and annotation using computer vision techniques in Python with OpenCV. The system detects coins in an image, marks their centers and boundaries, and visualizes the results. This project is useful for automated coin counting, educational purposes, and image analysis learning.
 
 ## Features
 
- • Image Loading and Display: Supports reading images and displaying them using OpenCV and Matplotlib.
+• Detects coins in an image using keypoints.
 
- • Thresholding: Prepares the image for coin detection by converting it to binary formats, including normal binary and binary inverse thresholding.
+• Applies binary inverse thresholding to separate coins from the background.
 
- • Coin Detection: Uses keypoints from OpenCV’s blob detection methods to locate coins.
+• Annotates coins with:
 
- • Annotation: Each detected coin is annotated with:
+   • Center point (blue dot)
 
-    • A small dot marking the center of the coin.
+   • Coin outline (green circle)
 
-    • A circle outlining the coin’s boundary.
+• Visualizes the annotated image using Matplotlib.
 
-    • Optional labeling for identification.
+• Easy-to-run Python script with minimal dependencies.
 
- • Visualization: The final annotated image is displayed for clear understanding of the detected coins.
+## Installation
 
-## Methodology
+• Clone or download the repository.
 
-• Preprocessing: The input image is converted to grayscale and thresholded to separate coins from the background.
+• Make sure Python 3 is installed.
 
-• Keypoint Detection: Coins are identified as keypoints using blob detection or other suitable feature detection techniques.
+• Install required packages using pip:
 
-• Annotation: Each keypoint is marked on the image with visual cues (dots and circles) to represent the coin’s location and size.
+     pip install opencv-python matplotlib numpy
 
-•Visualization: The annotated image is displayed to show the results of detection clearly.
+## Usage
+
+•  Place your input image in the project folder (the repository includes a sample image).
+
+• Run the Python script:
+
+    python coin_detection.py
+
+
+• The output image will display all detected coins annotated with their centers and outlines.
+
+## How it Works
+
+• Image Preprocessing: The input image is converted to grayscale and thresholded using binary inverse thresholding to highlight the coins.
+
+• Keypoint Detection: Coins are detected as blobs/keypoints using OpenCV’s blob detection.
+
+• Annotation: Each coin is annotated with a small blue dot at its center and a green circle showing its boundary.
+
+• Visualization: The final annotated image is displayed using Matplotlib.
+
+## Project Structure
+
+  Since this is a simple project, the repository contains:
+
+    Coin_Detection/
+    ├── coin_detection.py    # Main Python code for detection and annotation
+    ├── coin.jpg             # Sample input image
+    └── README.md            # Project documentation
 
 ## Notes
 
-• Threshold values may need adjustment based on lighting and coin color.
+ • Threshold value may need adjustment depending on image lighting and coin color.
 
-• Morphological operations like erosion and dilation can improve detection by removing noise or enhancing coin boundaries.
+ • Keypoints can be customized for detecting coins of different sizes.
 
-• Keypoint detection parameters can be tuned to improve accuracy and detect coins of various sizes.
+ • Morphological operations can improve detection by removing small noise or connecting broken coin regions.
 
+## Future Enhancements
+
+ • Support multiple images or video streams for real-time detection.
+
+ • Count total coins automatically and display the number on the image.
+
+ • Save annotated images to the output folder.
+
+ • Integrate a GUI interface for user-friendly interaction.
+
+## Dependencies
+
+   Python 3.x
+
+   OpenCV (opencv-python)
+
+   NumPy
+
+  Matplotlib
 ## Applications
 
 • Automated coin counting systems.
